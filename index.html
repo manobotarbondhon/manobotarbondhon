@@ -1,312 +1,256 @@
-<!DOCTYPE html>
-<html lang="bn">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!DOCTYPE html>  <html lang="bn">  
+<head>  
+<meta charset="UTF-8">  
+<meta name="viewport" content="width=device-width, initial-scale=1.0">  
+<title>মানবতার বন্ধন | Manobotar Bondhon</title>  <style>  
+*{margin:0;padding:0;box-sizing:border-box;}  
+body{font-family:Arial,sans-serif;background:#fff8f8;color:#292929;}  
+header{background:#b90024;color:white;padding:20px 15px;text-align:center;}  
+.logo{font-size:29px;font-weight:bold;}  
+.logo-image{display:block;width:120px;height:auto;margin:0 auto 12px;}  
+header p{margin-top:8px;font-size:14px;}  
+nav{background:#85001b;padding:13px;text-align:center;}  
+nav a{color:white;text-decoration:none;margin:0 9px;font-size:14px;display:inline-block;padding:5px 0;}  
+.hero{text-align:center;padding:55px 18px;background:linear-gradient(135deg,#ffe1e5,#fff);}  
+.hero h1{color:#b90024;font-size:30px;margin-bottom:15px;}  
+.hero p{line-height:1.8;font-size:16px;}  
+.btn{display:inline-block;background:#c0002b;color:white;border:none;padding:13px 23px;border-radius:7px;margin-top:22px;font-size:16px;text-decoration:none;cursor:pointer;}  
+section{padding:35px 18px;max-width:850px;margin:auto;}  
+h2{color:#b90024;text-align:center;margin-bottom:22px;}  
+.search-box,.form-box,.donation-box{background:white;padding:22px;border-radius:12px;box-shadow:0 3px 15px #00000012;}  
+input,select{width:100%;padding:13px;margin:8px 0 15px;border:1px solid #ddd;border-radius:7px;font-size:15px;}  
+label{font-weight:bold;font-size:14px;}  
+.features{display:grid;grid-template-columns:repeat(2,1fr);gap:13px;}  
+.feature{background:white;padding:23px 10px;border-radius:10px;text-align:center;box-shadow:0 2px 10px #00000010;}  
+.feature span{font-size:30px;}  
+.feature h3{color:#b90024;margin-top:10px;font-size:16px;}  
+.note{text-align:center;line-height:1.8;font-size:14px;color:#666;}  
+.amount-options{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin:15px 0 22px;}  
+.amount-option{display:block;border:1px solid #ddd;border-radius:8px;padding:14px;text-align:center;cursor:pointer;font-size:17px;color:#b90024;background:#fffafa;}  
+.amount-option input{width:auto;margin:0 5px 0 0;}  
+.payment-info{background:#fff5f6;padding:15px;border-radius:9px;margin-top:15px;line-height:2;}  
+.payment-info h3{color:#b90024;margin-bottom:8px;}  
+.payment-account{border-bottom:1px solid #eee;padding:10px 0;}  
+footer{background:#85001b;color:white;text-align:center;padding:25px 15px;line-height:2;}  
+button:hover,.btn:hover{opacity:.85;}  
+  
+@media(min-width:600px){  
+.features{grid-template-columns:repeat(4,1fr);}  
+.hero h1{font-size:42px;}  
+.amount-options{grid-template-columns:repeat(3,1fr);}  
+}  
+</style>  </head>  <body>  <header>  
+<img class="logo-image"  
+src="file_000000005f208208a6c79076027cbc7f.png"  
+alt="মানবতার বন্ধন লোগো">  
+<div class="logo">🩸 মানবতার বন্ধন</div>  
+<p>MANOBOTAR BONDHON</p>  
+<p>রক্তের প্রয়োজনে, মানবতার বন্ধনে</p>  
+</header>  <nav>  
+<a href="#home">হোম</a>  
+<a href="#search">রক্ত খুঁজুন</a>  
+<a href="#donor">ডোনার হোন</a>  
+<a href="#about">আমাদের সম্পর্কে</a>  
+<a href="#donate">ডোনেট করুন ❤️</a>  
+</nav>  <div class="hero" id="home">  
+<h1>রক্ত দিন, জীবন বাঁচান</h1>  
+<p>  
+এক ব্যাগ রক্ত হতে পারে একটি পরিবারের হাসির কারণ।<br>  
+আসুন, স্বেচ্ছায় রক্তদানে এগিয়ে আসি।  
+</p>  
+<a href="#search" class="btn">রক্তদাতা খুঁজুন</a>  
+</div>  <section id="search">  
+<h2>🩸 রক্তদাতা খুঁজুন</h2>  
+<div class="search-box">  <label>রক্তের গ্রুপ নির্বাচন করুন</label>
+<select id="blood">
 
-<title>মানবতার বন্ধন | Manobotar Bondhon</title>
+<option value="">রক্তের গ্রুপ</option>  
+<option>A+</option>  
+<option>A-</option>  
+<option>B+</option>  
+<option>B-</option>  
+<option>O+</option>  
+<option>O-</option>  
+<option>AB+</option>  
+<option>AB-</option>  
+</select>  <label>জেলার নাম</label>
+<input id="district" placeholder="জেলার নাম লিখুন">
 
-<style>
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
+<label>উপজেলার নাম</label>
+<input id="upazila" placeholder="উপজেলার নাম লিখুন">
 
-html{
-    scroll-behavior:smooth;
-}
+<button class="btn" onclick="searchDonor()">ডোনার খুঁজুন</button>
 
-body{
-    font-family:Arial,sans-serif;
-    background:#fff8f8;
-    color:#292929;
-    line-height:1.6;
-}
+<p id="result" class="note" style="margin-top:15px;"></p>  
+</div>  
+</section>  <section>  
+<h2>আমাদের কার্যক্রম</h2>  
+<div class="features">  <div class="feature">  
+<span>🩸</span>  
+<h3>রক্তদান</h3>  
+</div>  <div class="feature">  
+<span>❤️</span>  
+<h3>জীবন বাঁচানো</h3>  
+</div>  <div class="feature">  
+<span>🤝</span>  
+<h3>স্বেচ্ছাসেবা</h3>  
+</div>  <div class="feature">  
+<span>🌍</span>  
+<h3>মানবতার বন্ধন</h3>  
+</div>  </div>  
+</section>  <section id="donor">  
+<h2>স্বেচ্ছায় রক্তদাতা হতে চান?</h2>  <div class="form-box">  
+<p class="note">  
+আপনার রক্তদানের আগ্রহ আমাদের জানান।  
+এই প্রাথমিক সংস্করণের ফর্মটি শুধু প্রদর্শনের জন্য;  
+কোনো তথ্য সার্ভারে জমা হয় না।  
+</p>  <label>আপনার নাম</label>
+<input placeholder="নাম লিখুন">
 
-/* ================= HEADER ================= */
+<label>রক্তের গ্রুপ</label>
+<select>
 
-header{
-    background:linear-gradient(135deg,#b90024,#8b001c);
-    color:white;
-    padding:25px 15px 22px;
-    text-align:center;
-}
+<option>নির্বাচন করুন</option>  
+<option>A+</option>  
+<option>A-</option>  
+<option>B+</option>  
+<option>B-</option>  
+<option>O+</option>  
+<option>O-</option>  
+<option>AB+</option>  
+<option>AB-</option>  
+</select>  <button class="btn" onclick="alert('এটি ডেমো ফর্ম। এখনো নিবন্ধন সম্পন্ন হয় না।')">  
+নিবন্ধন করুন  
+</button>  
+</div>  
+</section>  <section id="donate">  
+<h2>❤️ মানবতার বন্ধনে পাশে থাকুন</h2>  <div class="donation-box">  <p class="note">  
+মানবতার বন্ধনের স্বেচ্ছাসেবামূলক কার্যক্রম  
+পরিচালনায় আপনার অনুদান আমাদের সহযোগিতা করবে।  
+আপনার সামর্থ্য অনুযায়ী অনুদান দিতে পারেন।  
+</p>  <br>  <label>অনুদানের পরিমাণ নির্বাচন করুন</label>
 
-.logo-image{
-    display:block;
-    width:120px;
-    max-width:45%;
-    height:auto;
-    margin:0 auto 12px;
-}
+<div class="amount-options">  <label class="amount-option">  
+<input type="radio" name="amount" value="50">  
+৳৫০  
+</label>  <label class="amount-option">  
+<input type="radio" name="amount" value="100">  
+৳১০০  
+</label>  <label class="amount-option">  
+<input type="radio" name="amount" value="200">  
+৳২০০  
+</label>  <label class="amount-option">  
+<input type="radio" name="amount" value="300">  
+৳৩০০  
+</label>  <label class="amount-option">  
+<input type="radio" name="amount" value="400">  
+৳৪০০  
+</label>  <label class="amount-option">  
+<input type="radio" name="amount" value="500">  
+৳৫০০  
+</label>  </div>  <label>পেমেন্ট পদ্ধতি নির্বাচন করুন</label>
 
-.logo{
-    font-size:30px;
-    font-weight:bold;
-}
-
-header p{
-    margin-top:5px;
-    font-size:14px;
-}
-
-.tagline{
-    font-size:15px;
-    opacity:.95;
-}
-
-/* ================= NAVIGATION ================= */
-
-nav{
-    background:#720018;
-    padding:12px 8px;
-    text-align:center;
-    position:sticky;
-    top:0;
-    z-index:1000;
-    box-shadow:0 3px 12px #00000020;
-}
-
-nav a{
-    color:white;
-    text-decoration:none;
-    margin:4px 7px;
-    font-size:14px;
-    display:inline-block;
-    padding:6px 5px;
-}
-
-nav a:hover{
-    color:#ffd9df;
-}
-
-/* ================= HERO ================= */
-
-.hero{
-    text-align:center;
-    padding:65px 18px;
-    background:
-    linear-gradient(135deg,#ffe0e5,#ffffff 55%,#fff1f3);
-}
-
-.hero h1{
-    color:#b90024;
-    font-size:34px;
-    margin-bottom:15px;
-}
-
-.hero p{
-    line-height:1.9;
-    font-size:16px;
-    max-width:700px;
-    margin:auto;
-}
-
-.btn{
-    display:inline-block;
-    background:linear-gradient(135deg,#c0002b,#a40025);
-    color:white;
-    border:none;
-    padding:13px 23px;
-    border-radius:8px;
-    margin-top:22px;
-    font-size:16px;
-    text-decoration:none;
-    cursor:pointer;
-    box-shadow:0 5px 14px #b9002430;
-}
-
-.btn:hover{
-    opacity:.9;
-    transform:translateY(-1px);
-}
-
-/* ================= SECTIONS ================= */
-
-section{
-    padding:45px 18px;
-    max-width:900px;
-    margin:auto;
-}
-
-h2{
-    color:#b90024;
-    text-align:center;
-    margin-bottom:25px;
-    font-size:25px;
-}
-
-.search-box,
-.form-box,
-.donation-box{
-    background:white;
-    padding:25px;
-    border-radius:15px;
-    box-shadow:0 5px 25px #00000012;
-    border:1px solid #f2dddd;
-}
-
-input,
-select{
-    width:100%;
-    padding:13px;
-    margin:8px 0 15px;
-    border:1px solid #ddd;
-    border-radius:8px;
-    font-size:15px;
-    outline:none;
-}
-
-input:focus,
-select:focus{
-    border-color:#b90024;
-    box-shadow:0 0 0 3px #b9002412;
-}
-
-label{
-    font-weight:bold;
-    font-size:14px;
-}
-
-.note{
-    text-align:center;
-    line-height:1.8;
-    font-size:14px;
-    color:#666;
-}
-
-/* ================= FEATURES ================= */
-
-.features{
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:15px;
-}
-
-.feature{
-    background:white;
-    padding:25px 12px;
-    border-radius:13px;
-    text-align:center;
-    box-shadow:0 4px 16px #00000010;
-    border:1px solid #f1dddd;
-    transition:.2s;
-}
-
-.feature:hover{
-    transform:translateY(-3px);
-}
-
-.feature span{
-    font-size:34px;
-}
-
-.feature h3{
-    color:#b90024;
-    margin-top:10px;
-    font-size:16px;
-}
-
-/* ================= REGISTRATION ================= */
-
-.registration-info{
-    background:#fff5f6;
-    border-left:4px solid #b90024;
-    padding:15px;
-    border-radius:8px;
-    margin-bottom:20px;
-}
-
-.registration-info p{
-    font-size:14px;
-    color:#555;
-}
-
-/* ================= DONATION ================= */
-
-.amount-options{
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:12px;
-    margin:15px 0 22px;
-}
-
-.amount-option{
-    display:block;
-    border:1px solid #ddd;
-    border-radius:8px;
-    padding:14px;
-    text-align:center;
-    cursor:pointer;
-    font-size:17px;
-    color:#b90024;
-    background:#fffafa;
-}
-
-.amount-option input{
-    width:auto;
-    margin:0 5px 0 0;
-}
-
-.amount-option:hover{
-    border-color:#b90024;
-    background:#fff3f5;
-}
-
-.payment-info{
-    background:#fff5f6;
-    padding:18px;
-    border-radius:9px;
-    margin-top:15px;
-    line-height:2;
-}
-
-.payment-info h3{
-    color:#b90024;
-    margin-bottom:8px;
-}
-
-.payment-account{
-    border-bottom:1px solid #eee;
-    padding:10px 0;
-}
-
-/* ================= CONTACT ================= */
-
-.contact-box{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:15px;
-}
-
-.contact-card{
-    background:white;
-    padding:22px 15px;
-    text-align:center;
-    border-radius:13px;
-    box-shadow:0 4px 16px #00000010;
-    border:1px solid #f1dddd;
-}
-
-.contact-card .icon{
-    font-size:30px;
-}
-
-.contact-card h3{
-    color:#b90024;
-    margin:8px 0;
-}
-
-.contact-card a{
-    color:#333;
-    text-decoration:none;
-    font-weight:bold;
-}
-
-/* ================= FOOTER ================= */
-
-footer{
-    background:#85001b;
-    color:white;
-   
+<select id="paymentMethod" onchange="showPaymentInfo()">  
+<option value="">পেমেন্ট পদ্ধতি নির্বাচন করুন</option>  
+<option value="bkash">বিকাশ</option>  
+<option value="nagad">নগদ</option>  
+</select>  <div id="paymentDetails" class="payment-info">  
+<p class="note">  
+পেমেন্ট পদ্ধতি নির্বাচন করলে অ্যাকাউন্টের  
+তথ্য এখানে দেখতে পাবেন।  
+</p>  
+</div>  <p class="note" style="margin-top:18px;">  
+অনুদান পাঠানোর আগে নম্বর ও অ্যাকাউন্টের নাম  
+ভালোভাবে যাচাই করে নেবেন।  
+</p>  </div>  
+</section>  <section id="about">  
+<h2>মানবতার বন্ধন সম্পর্কে</h2>  
+<p class="note">  
+মানবতার বন্ধন একটি স্বেচ্ছাসেবামূলক রক্তদাতা  
+সংযোগ উদ্যোগের পরিকল্পনা। আমাদের লক্ষ্য  
+রক্তদাতা ও রক্তের প্রয়োজনে থাকা মানুষের মধ্যে  
+নিরাপদ যোগাযোগের সুযোগ তৈরি করা।  
+</p>  
+</section>  <footer>  
+<h3>🩸 MANOBOTAR BONDHON</h3>  
+<p>রক্তের প্রয়োজনে, মানবতার বন্ধনে</p>  
+<p>মানুষ মানুষের জন্য ❤️</p>  
+<p>© 2026 Manobotar Bondhon</p>  
+</footer>  <script>  
+  
+function searchDonor(){  
+  
+const blood=document.getElementById("blood").value;  
+const district=document.getElementById("district").value;  
+const upazila=document.getElementById("upazila").value;  
+const result=document.getElementById("result");  
+  
+if(!blood || !district.trim()){  
+result.innerText="রক্তের গ্রুপ ও জেলার নাম নির্বাচন করুন।";  
+return;  
+}  
+  
+result.innerText=  
+"এটি প্রাথমিক ডেমো। এখনো ডোনার ডেটাবেজ সংযুক্ত করা হয়নি।";  
+  
+}  
+  
+function showPaymentInfo(){  
+  
+const method=document.getElementById("paymentMethod").value;  
+const details=document.getElementById("paymentDetails");  
+  
+let paymentHTML="";  
+  
+if(method==="bkash"){  
+  
+paymentHTML=`  
+<h3>বিকাশ অ্যাকাউন্ট</h3>  
+<div class="payment-account">  
+<strong>অ্যাকাউন্ট</strong><br>  
+নাম: রেজাউল করিম<br>  
+নম্বর: ০১৭৫৫২৫৩১০১  
+</div>  
+`;  
+  
+}else if(method==="nagad"){  
+  
+paymentHTML=`  
+<h3>নগদ অ্যাকাউন্ট</h3>  
+<div class="payment-account">  
+<strong>অ্যাকাউন্ট</strong><br>  
+নাম: রেজাউল করিম<br>  
+নম্বর: ০১৭৫৫২৫৩১০১  
+</div>  
+`;  
+  
+}else{  
+  
+paymentHTML=`  
+<p class="note">  
+পেমেন্ট পদ্ধতি নির্বাচন করলে অ্যাকাউন্টের  
+তথ্য এখানে দেখতে পাবেন।  
+</p>  
+`;  
+  
+}  
+  
+details.innerHTML=paymentHTML;  
+  
+}  
+  
+</script>  <div style="text-align:center; margin:30px 0;">  
+<a href="https://docs.google.com/forms/d/e/1FAIpQLSe0gwLc0ow05nfvrhzc-erZFXDCfcUuDDStGPFKNMP6W_26aw/viewform"  
+target="_blank"  
+style="display:inline-block;  
+background:#e60023;  
+color:white;  
+padding:15px 28px;  
+border-radius:10px;  
+text-decoration:none;  
+font-size:18px;  
+font-weight:bold;">  
+🩸 রক্তদাতা হিসেবে নিবন্ধন করুন  
+</a>  
+</div>  </body>  
+</html>
