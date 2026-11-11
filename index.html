@@ -1,665 +1,108 @@
+
 <!DOCTYPE html>
 <html lang="bn">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>মানবতার বন্ধন - রক্তদাতা নিবন্ধন</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f5f5f5;
+      color: #222;
+      text-align: center;
+    }
+
+    .header {
+      background: #c62828;
+      color: white;
+      padding: 35px 15px;
+    }
+
+    .header h1 {
+      margin: 0;
+      font-size: 30px;
+    }
+
+    .header p {
+      margin-bottom: 0;
+    }
+
+    .container {
+      max-width: 550px;
+      margin: 35px auto;
+      padding: 25px;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    }
+
+    .blood {
+      font-size: 55px;
+    }
+
+    h2 {
+      color: #c62828;
+    }
+
+    .register-btn {
+      display: inline-block;
+      background: #c62828;
+      color: white;
+      padding: 15px 28px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: 18px;
+      font-weight: bold;
+      margin-top: 15px;
+    }
+
+    .register-btn:hover {
+      background: #a31515;
+    }
+
+    .footer {
+      padding: 20px;
+      color: #666;
+      font-size: 14px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="header">
+    <h1>🩸 মানবতার বন্ধন</h1>
+    <p>রক্ত দিন, জীবন বাঁচান</p>
+  </div>
+
+  <div class="container">
+    <div class="blood">🩸</div>
+
+    <h2>রক্তদাতা নিবন্ধন করুন</h2>
+
+    <p>
+      আপনার এক ব্যাগ রক্ত বাঁচাতে পারে একটি মূল্যবান প্রাণ।
+      রক্তদাতা হিসেবে নিবন্ধন করে মানবতার পাশে দাঁড়ান।
+    </p>
+
+    <a
+      class="register-btn"
+      href="https://docs.google.com/forms/d/e/1FAIpQLSe0gwLc0ow05nfvrhzc-erZFXDCfcUuDDStGPFKNMP6W_26aw/viewform"
+      target="_blank"
+      rel="noopener noreferrer">
+      রক্তদাতা হিসেবে নিবন্ধন করুন
+    </a>
+  </div>
+
+  <div class="footer">
+    © 2026 মানবতার বন্ধন | মানবতার সেবায় আমরা
+  </div>
 
-<title>মানবতার বন্ধন | Manobotar Bondhon</title>
-
-<meta name="description"
-content="মানবতার বন্ধন — রক্তের প্রয়োজনে মানুষের পাশে দাঁড়ানোর একটি স্বেচ্ছাসেবী উদ্যোগ।">
-
-<style>
-
-/* =========================
-   BASIC
-========================= */
-
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-}
-
-html{
-  scroll-behavior:smooth;
-}
-
-body{
-  font-family:
-  "Noto Sans Bengali",
-  "Hind Siliguri",
-  Arial,
-  sans-serif;
-
-  background:#fff8f9;
-  color:#292929;
-  line-height:1.7;
-}
-
-:root{
-  --red:#b9002b;
-  --dark:#7f001d;
-  --light:#fff0f3;
-  --white:#ffffff;
-  --text:#292929;
-  --muted:#666;
-  --shadow:0 8px 30px rgba(100,0,20,.08);
-}
-
-/* =========================
-   HEADER
-========================= */
-
-header{
-  background:linear-gradient(135deg,#b9002b,#85001b);
-  color:white;
-  text-align:center;
-  padding:28px 18px 25px;
-  position:relative;
-  overflow:hidden;
-}
-
-header::after{
-  content:"";
-  position:absolute;
-  width:220px;
-  height:220px;
-  border-radius:50%;
-  background:rgba(255,255,255,.05);
-  right:-90px;
-  top:-100px;
-}
-
-.logo-image{
-  display:block;
-  width:125px;
-  max-width:45vw;
-  height:auto;
-  margin:0 auto 12px;
-  position:relative;
-  z-index:2;
-}
-
-.logo{
-  font-size:29px;
-  font-weight:800;
-  position:relative;
-  z-index:2;
-}
-
-.brand-en{
-  font-size:12px;
-  letter-spacing:2px;
-  opacity:.9;
-  position:relative;
-  z-index:2;
-}
-
-.tagline{
-  margin-top:7px;
-  font-size:14px;
-  opacity:.95;
-  position:relative;
-  z-index:2;
-}
-
-/* =========================
-   NAVIGATION
-========================= */
-
-nav{
-  background:#85001b;
-  padding:11px 8px;
-  text-align:center;
-  position:sticky;
-  top:0;
-  z-index:20;
-  box-shadow:0 4px 15px rgba(0,0,0,.12);
-}
-
-nav a{
-  color:white;
-  text-decoration:none;
-  margin:0 6px;
-  font-size:13px;
-  font-weight:600;
-  display:inline-block;
-  padding:5px 3px;
-}
-
-/* =========================
-   HERO
-========================= */
-
-.hero{
-  min-height:480px;
-
-  display:flex;
-  align-items:center;
-  justify-content:center;
-
-  text-align:center;
-
-  padding:65px 18px;
-
-  background:
-  radial-gradient(circle at top right,#ffdce3 0%,transparent 35%),
-  linear-gradient(135deg,#fff0f3,#fff 60%,#ffe7eb);
-}
-
-.hero-content{
-  max-width:780px;
-}
-
-.badge{
-  display:inline-block;
-
-  background:white;
-  color:var(--red);
-
-  border:1px solid #ffd1d9;
-
-  padding:7px 15px;
-
-  border-radius:50px;
-
-  font-size:13px;
-  font-weight:bold;
-
-  margin-bottom:18px;
-
-  box-shadow:0 5px 18px rgba(100,0,20,.07);
-}
-
-.hero h1{
-  color:var(--red);
-  font-size:38px;
-  line-height:1.3;
-  margin-bottom:15px;
-}
-
-.hero h1 span{
-  color:#333;
-}
-
-.hero p{
-  color:#555;
-  font-size:16px;
-  line-height:1.9;
-  max-width:650px;
-  margin:auto;
-}
-
-.btn{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-
-  background:linear-gradient(135deg,#d00032,#a50025);
-
-  color:white;
-
-  border:none;
-
-  padding:13px 23px;
-
-  border-radius:9px;
-
-  margin-top:22px;
-
-  font-size:16px;
-
-  font-weight:bold;
-
-  text-decoration:none;
-
-  cursor:pointer;
-
-  box-shadow:0 8px 20px rgba(185,0,43,.18);
-
-  transition:.2s;
-}
-
-.btn:hover{
-  transform:translateY(-2px);
-  opacity:.93;
-}
-
-.btn-light{
-  background:white;
-  color:var(--red);
-  border:1px solid #ffd1d9;
-  box-shadow:none;
-  margin-left:8px;
-}
-
-/* =========================
-   COMMON SECTION
-========================= */
-
-section{
-  max-width:900px;
-  margin:auto;
-  padding:55px 18px;
-}
-
-.section-title{
-  text-align:center;
-  color:var(--red);
-  font-size:27px;
-  margin-bottom:10px;
-}
-
-.section-subtitle{
-  text-align:center;
-  color:var(--muted);
-  font-size:14px;
-  margin-bottom:28px;
-}
-
-/* =========================
-   SEARCH
-========================= */
-
-.search-box{
-  background:white;
-  padding:25px;
-
-  border-radius:16px;
-
-  box-shadow:var(--shadow);
-
-  border:1px solid #ffe1e5;
-}
-
-label{
-  display:block;
-  font-weight:bold;
-  font-size:14px;
-  margin-bottom:6px;
-}
-
-input,
-select{
-  width:100%;
-  padding:13px;
-
-  margin:6px 0 17px;
-
-  border:1px solid #ddd;
-
-  border-radius:8px;
-
-  font-size:15px;
-
-  background:#fff;
-}
-
-input:focus,
-select:focus{
-  outline:none;
-  border-color:#d00032;
-  box-shadow:0 0 0 3px rgba(208,0,50,.08);
-}
-
-.search-note{
-  text-align:center;
-  color:#777;
-  font-size:13px;
-  margin-top:15px;
-}
-
-/* =========================
-   FEATURES
-========================= */
-
-.features{
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:14px;
-}
-
-.feature{
-  background:white;
-  padding:25px 12px;
-
-  border-radius:15px;
-
-  text-align:center;
-
-  box-shadow:0 5px 20px rgba(100,0,20,.06);
-
-  border:1px solid #ffe8eb;
-
-  transition:.2s;
-}
-
-.feature:hover{
-  transform:translateY(-3px);
-}
-
-.feature-icon{
-  font-size:34px;
-}
-
-.feature h3{
-  color:var(--red);
-  margin-top:8px;
-  font-size:16px;
-}
-
-.feature p{
-  color:#777;
-  font-size:12px;
-  margin-top:5px;
-}
-
-/* =========================
-   EMERGENCY BLOOD
-========================= */
-
-.emergency{
-  padding-top:10px;
-}
-
-.emergency-box{
-  background:
-  linear-gradient(135deg,#8d001f,#c90035);
-
-  color:white;
-
-  padding:30px 20px;
-
-  border-radius:18px;
-
-  text-align:center;
-
-  box-shadow:0 12px 35px rgba(150,0,30,.20);
-}
-
-.emergency-box h2{
-  font-size:25px;
-  margin-bottom:8px;
-}
-
-.emergency-box p{
-  font-size:14px;
-  opacity:.95;
-  line-height:1.9;
-}
-
-.emergency-btn{
-  display:inline-flex;
-
-  align-items:center;
-  justify-content:center;
-
-  background:white;
-
-  color:var(--red);
-
-  text-decoration:none;
-
-  padding:13px 25px;
-
-  border-radius:9px;
-
-  font-weight:bold;
-
-  margin-top:18px;
-
-  box-shadow:0 6px 20px rgba(0,0,0,.12);
-}
-
-.emergency-btn:hover{
-  transform:translateY(-2px);
-}
-
-/* =========================
-   DONOR REGISTRATION
-========================= */
-
-.registration{
-  background:
-  linear-gradient(135deg,#fff0f3,#fff);
-}
-
-.registration-box{
-  background:white;
-
-  max-width:700px;
-
-  margin:auto;
-
-  padding:30px 22px;
-
-  border-radius:18px;
-
-  box-shadow:var(--shadow);
-
-  border:1px solid #ffe1e5;
-
-  text-align:center;
-}
-
-.registration-box h3{
-  color:var(--red);
-  font-size:21px;
-  margin-bottom:10px;
-}
-
-.registration-box p{
-  color:#666;
-  font-size:14px;
-  line-height:1.9;
-}
-
-.form-button{
-  width:100%;
-  max-width:500px;
-  margin-top:20px;
-}
-
-.small-note{
-  font-size:12px !important;
-  color:#888 !important;
-  margin-top:13px;
-}
-
-/* =========================
-   DONATION
-========================= */
-
-.donation-box{
-  background:white;
-
-  padding:28px 20px;
-
-  border-radius:17px;
-
-  box-shadow:var(--shadow);
-
-  border:1px solid #ffe1e5;
-}
-
-.donation-intro{
-  text-align:center;
-  color:#666;
-  font-size:14px;
-  margin-bottom:22px;
-}
-
-.amount-options{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:10px;
-  margin:12px 0 25px;
-}
-
-.amount-option{
-  display:flex;
-
-  align-items:center;
-  justify-content:center;
-
-  min-height:50px;
-
-  border:1px solid #ffd4dc;
-
-  border-radius:9px;
-
-  color:var(--red);
-
-  background:#fffafb;
-
-  cursor:pointer;
-
-  font-size:15px;
-
-  font-weight:bold;
-
-  transition:.2s;
-}
-
-.amount-option:hover{
-  background:#fff0f3;
-}
-
-.amount-option input{
-  width:auto;
-  margin:0 7px 0 0;
-}
-
-.optional-amount{
-  display:none;
-  margin-top:-5px;
-}
-
-.payment-title{
-  color:var(--red);
-  margin:22px 0 10px;
-  font-size:18px;
-}
-
-.payment-card{
-  background:#fff5f7;
-
-  border:1px solid #ffe0e5;
-
-  border-radius:11px;
-
-  padding:17px;
-
-  margin-bottom:12px;
-
-  line-height:1.9;
-}
-
-.payment-card h4{
-  color:var(--red);
-  margin-bottom:4px;
-}
-
-.payment-card strong{
-  color:#333;
-}
-
-.donation-warning{
-  text-align:center;
-  color:#888;
-  font-size:12px;
-  margin-top:16px;
-}
-
-/* =========================
-   CONTACT
-========================= */
-
-.contact-box{
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:15px;
-}
-
-.contact-card{
-  background:white;
-  border:1px solid #ffe1e5;
-  border-radius:15px;
-  padding:22px 15px;
-  text-align:center;
-  box-shadow:var(--shadow);
-}
-
-.contact-icon{
-  font-size:32px;
-}
-
-.contact-card h3{
-  color:var(--red);
-  font-size:16px;
-  margin:7px 0;
-}
-
-.contact-card a{
-  color:#333;
-  text-decoration:none;
-  font-weight:bold;
-  font-size:17px;
-}
-
-.contact-card a:hover{
-  color:var(--red);
-}
-
-/* =========================
-   ABOUT
-========================= */
-
-.about-box{
-  background:white;
-
-  padding:28px 22px;
-
-  border-radius:17px;
-
-  box-shadow:var(--shadow);
-
-  border:1px solid #ffe4e8;
-
-  text-align:center;
-}
-
-.about-box p{
-  color:#666;
-  font-size:14px;
-  line-height:2;
-}
-
-/* =========================
-   FOOTER
-========================= */
-
-footer{
-  background:linear-gradient(135deg,#85001b,#5f0015);
-
-  color:white;
-
-  text-align:center;
-
-  padding:35px 18px;
-
-  line-height:2;
-}
-
-footer h3{
-  font-size:20px;
-}
-
-footer p{
-  font-size:13px;
-  opacity:.92;
-}
-
-.footer-line{
-  width
+</body>
+</html>
